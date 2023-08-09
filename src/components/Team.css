@@ -19,14 +19,15 @@
 .membercard{
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
     align-items: center;
     /* width: 200px; */
-    box-shadow: 0px 0px 10px #aaaaaa;
+    box-shadow: 0px 0px 10px #aaaaaa73;
     /* background-color: #3b82f6; */
     padding: 8px;
     margin: 10px 20px;
     margin-bottom: 50px;  
-    background-color: rgb(158 158 158 / 10%);
+    /* background-color: rgba(158, 158, 158, 0.1); */
 }
 .membername h3{
     font-family: 'Rubik', sans-serif;
@@ -73,9 +74,24 @@
       font-family: 'Rubik', sans-serif;
       font-size: 5vw;
       margin: 80px auto;
-      color: #0440a1;
+      color: #000000;
       border-bottom: 5px solid #0440a1;
       font-weight: bolder;
+      padding-top: 5%;
+  }
+  .text2 .sidehead{
+    font-family: 'Rubik', sans-serif;
+    
+    margin: 80px auto;
+    color: #000000;
+    
+    /* font-weight: bolder; */
+  }
+  .text2 h2{
+    /* border-bottom: 5px solid #0440a1; */
+    text-decoration-line: underline;
+    text-align: center;
+    text-decoration-color: #0440a1;
   }
   @media screen and(min-width:700px) {
     .teamcardcontainer{

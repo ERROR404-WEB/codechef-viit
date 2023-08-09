@@ -43,14 +43,15 @@ const Team = () => {
         
       <div className="text">
         <Zoom>
+        <div className="text2">
           <h1>Meet Our Team</h1>
-
+      </div>
         </Zoom>
       </div>
       
       <div className="coreteam">
         <div className="text2">
-            <h1>Team</h1>
+            <h2  className="sidehead">Team</h2>
         </div>
         <div className="teamcardcontainer">
         
@@ -117,7 +118,7 @@ const Team = () => {
 
       <div className="Eventteam">
         <div className="text2">
-            <h1>Team</h1>
+            <h2 className="sidehead">Team</h2>
         </div>
         <div className="teamcardcontainer">
         <Carousel 

@@ -15,7 +15,8 @@
     /* max-width: 500px; */
     text-align: inherit;
     margin: auto 20px;
-    background-color: rgb(192, 206, 255);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.103);
     padding: 10px 8px;
     border-radius: 5px;
     max-width: 100%;
@@ -33,4 +34,21 @@
 .activityimage{
     max-height: 600px;
     padding: auto 80px;
+}
+.timelinebtn{
+    padding: 6px 20px !important ;
+    margin-top: 5%  !important;   
+    margin-bottom: 0% !important;
+}
+.textx h1{
+    text-decoration-line: underline;
+    text-decoration-color: #0440a1;
+    font-family: 'Rubik', sans-serif;
+    margin: 20px auto;
+    color: #000000;
+   text-align: center;
+
+    font-weight: bolder;
+    padding-top: 2%;
+    margin-bottom: 5%;
 }

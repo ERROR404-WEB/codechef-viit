@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
@@ -6,7 +6,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { Zoom,Reveal } from 'react-awesome-reveal';
+import { Zoom, Reveal } from 'react-awesome-reveal';
 // import timelineItemClasses from '@mui/lab/timeline';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -25,7 +25,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import './Activities.css'
 import { keyframes } from '@emotion/react';
 export default function AlternateReverseTimeline() {
-  
+
   // const [pos, setpos] = useState("alternate-reverse")
   // const [dimensions, setDimensions] =useState({ 
   //   height: window.innerHeight,
@@ -42,14 +42,14 @@ export default function AlternateReverseTimeline() {
   //     }
   //     else
   //     setpos("right")
-    
+
   //   }
 
   //   window.addEventListener('resize', handleResize)
   // })
 
 
-  
+
   // useEffect(() => {
   //   if(dimensions.width >800){
   //     setpos("alternate-reverse")
@@ -59,19 +59,19 @@ export default function AlternateReverseTimeline() {
   //   }
   //   console.log({pos})
   // }, [dimensions.width,pos])
-  
-  const [pos,setPos]=useState(`${(window.innerWidth<700) ? "right" : "alternate-reverse"}`);
-  const pos1="animate__animated animate__fadeInRight";
-  const pos2="animate__animated animate__fadeInLeft";
 
-  useEffect(()=>{
-    window.addEventListener("resize",()=>{
-      if(window.innerWidth<700)
-      setPos("right");
+  const [pos, setPos] = useState(`${(window.innerWidth < 700) ? "right" : "alternate-reverse"}`);
+  const pos1 = "animate__animated animate__fadeInRight";
+  const pos2 = "animate__animated animate__fadeInLeft";
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 700)
+        setPos("right");
       else
-      setPos("alternate-reverse");
+        setPos("alternate-reverse");
     })
-  },[]);
+  }, []);
 
   const right = keyframes`
   from {
@@ -85,7 +85,7 @@ export default function AlternateReverseTimeline() {
   }
 `;
 
-const left = keyframes`
+  const left = keyframes`
 from {
   opacity: 0;
   transform: translate3d(-200px, 0, 0);
@@ -99,132 +99,138 @@ to {
 
   return (
     <>
-    <div className="seminarcomponent" >
-    <div className="text">
+      <div className="seminarcomponent" >
+        <div className="textx">
           <Zoom>
 
-          <h1>Activities</h1>
+            <h1>Activities</h1>
           </Zoom>
         </div>
-    </div>
-    <Timeline position={pos}
-     sx={(pos=="right")?{[`& .${timelineItemClasses.root}:before`]: {
-          flex: 0,
-           padding: 0,
-         }}:
-         null
+      </div>
+      <Timeline position={pos}
+        sx={(pos === "right") ? {
+          [`& .${timelineItemClasses.root}:before`]: {
+            flex: 0,
+            padding: 0,
+          }
+        } :
+          null
         }
-    >
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color='secondary'/>
-          <TimelineConnector  />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Reveal>
-          <div className="timecontainer">
-          <div className="Timecard">
-            <div className="date">
-            <p>25 Sept 2022 - 27 Sept 2022</p>
-            </div>
-            <div className="timecardcontainer">
-              <div className="timecardheading">
-                <h1>heading</h1>
+      >
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color='secondary' />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Reveal>
+              <div className="timecontainer">
+                <div className="Timecard">
+                  {/* <div className="date">
+                    <p>25 Sept 2022 - 27 Sept 2022</p>
+                  </div> */}
+                  <div className="timecardcontainer">
+                    <div className="timecardheading">
+                      <h1>heading</h1>
+                    </div>
+                    <div className="timecarddetail">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+                      <p><button className='button button2 timelinebtn'>View More</button></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="timecarddetail">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+            </Reveal>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color='secondary' />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Reveal keyframes={(pos == 'right') ? left : right}>
+              <div className="timecontainer">
+                <div className="Timecard">
+                  {/* <div className="date">
+                    <p>25 Sept 2022 - 27 Sept 2022</p>
+                  </div> */}
+                  <div className="timecardcontainer">
+                    <div className="timecardheading">
+                      <h1>heading</h1>
+                    </div>
+                    <div className="timecarddetail">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+                      <p><button className='button button2 timelinebtn'>View More</button></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          </div>
-          </Reveal>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color='secondary'/>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-        <Reveal keyframes={(pos=='right')?left:right}>
-          <div className="timecontainer">
-          <div className="Timecard">
-            <div className="date">
-            <p>25 Sept 2022 - 27 Sept 2022</p>
-            </div>
-            <div className="timecardcontainer">
-              <div className="timecardheading">
-                <h1>heading</h1>
+            </Reveal>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color='secondary' />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Reveal>
+              <div className="timecontainer">
+                <div className="Timecard">
+                  {/* <div className="date">
+                    <p>25 Sept 2022 - 27 Sept 2022</p>
+                  </div> */}
+                  <div className="timecardcontainer">
+                    <div className="timecardheading">
+                      <h1>heading</h1>
+                    </div>
+                    <div className="timecarddetail">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+                      <p><button className='button button2 timelinebtn'>View More</button></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="timecarddetail">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+            </Reveal>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color='secondary' />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Reveal keyframes={(pos == 'right') ? left : right}>
+              <div className="timecontainer">
+                <div className="Timecard">
+                  {/* <div className="date">
+                    <p>25 Sept 2022 - 27 Sept 2022</p>
+                  </div> */}
+                  <div className="timecardcontainer">
+                    <div className="timecardheading">
+                      <h1>heading</h1>
+                    </div>
+                    <div className="timecarddetail">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
+                      <p><button className='button button2  timelinebtn'>View More</button></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          </div>
-          </Reveal>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color='secondary'/>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-        <Reveal>
-          <div className="timecontainer">
-          <div className="Timecard">
-            <div className="date">
-            <p>25 Sept 2022 - 27 Sept 2022</p>
-            </div>
-            <div className="timecardcontainer">
-              <div className="timecardheading">
-                <h1>heading</h1>
-              </div>
-              <div className="timecarddetail">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </Reveal>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color='secondary'/>
-          <TimelineConnector/>
-        </TimelineSeparator>
-        <TimelineContent>
-        <Reveal keyframes={(pos=='right')?left:right}>
-          <div className="timecontainer">
-          <div className="Timecard">
-            <div className="date">
-            <p>25 Sept 2022 - 27 Sept 2022</p>
-            </div>
-            <div className="timecardcontainer">
-              <div className="timecardheading">
-                <h1>heading</h1>
-              </div>
-              <div className="timecarddetail">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus quisquam distinctio, ad repellendus ducimus, vel mollitia sint nemo est at aliquid laborum amet iure harum magni voluptate modi sequi.</p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </Reveal>
-        </TimelineContent>
-        
-      </TimelineItem>
-    </Timeline>
-    {/* <br />
+            </Reveal>
+          </TimelineContent>
+
+        </TimelineItem>
+      </Timeline>
+      {/* <br />
     <br />
     <br />
     <br />
     <br />
     <br /> */}
-    
-    {/* <Carousel
+
+      {/* <Carousel
      autoPlay="true"
     infiniteLoop="true" 
     emulateTouch="true" 
